@@ -15,7 +15,7 @@ MEM=${MEM:-512}
 CORE=${CORE:-1}
 BRIDGE=${BRIDGE:-vmbr0}
 NET=${NET:-dhcp}
-STORAGE=${STORAGE:-local}
+STORAGE=${STORAGE:-local-lvm}
 IMG="local:vztmpl/debian-12-standard_12.0-1_amd64.tar.zst"
 
 echo -e "\n>>> Creating LXC for $APP (CTID=$CTID)\n"
@@ -28,6 +28,7 @@ if ! pveam list local | grep -q "debian-12"; then
 fi
 
 IMG="local:vztmpl/debian-12-standard_12.0-1_amd64.tar.zst"
+
 
 # --- Create container ---
 pct create $CTID $IMG \
