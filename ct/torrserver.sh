@@ -21,8 +21,8 @@ IMG="local:vztmpl/debian-13-standard_13.1-2_amd64.tar.zst"
 echo -e "\n>>> Creating LXC for $APP (CTID=$CTID)\n"
 
 # --- Template check ---
-if ! pveam list local | grep -q "debian-12"; then
-    echo ">>> Downloading Debian 12 template..."
+if ! pveam list local | grep -q "debian-13"; then
+    echo ">>> Downloading Debian 13 template..."
     pveam update
     pveam download local debian-13-standard_13.1-2_amd64.tar.zst
 fi
