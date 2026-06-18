@@ -8,11 +8,11 @@ set -e
 
 # --- Defaults ---
 APP="torrserver"
-CTID=${CTID:-9001}
+CTID=${CTID:-119}
 HN=${HN:-torrserver}
 DISK_SIZE=${DISK_SIZE:-4}
-MEM=${MEM:-512}
-CORE=${CORE:-1}
+MEM=${MEM:-2048}
+CORE=${CORE:-2}
 BRIDGE=${BRIDGE:-vmbr0}
 NET=${NET:-dhcp}
 STORAGE=${STORAGE:-local-lvm}
