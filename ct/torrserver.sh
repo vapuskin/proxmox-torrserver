@@ -21,11 +21,13 @@ IMG="local:vztmpl/debian-12-standard_12.0-1_amd64.tar.zst"
 echo -e "\n>>> Creating LXC for $APP (CTID=$CTID)\n"
 
 # --- Template check ---
-if ! pveam list $STORAGE | grep -q "debian-12"; then
+if ! pveam list local | grep -q "debian-12"; then
     echo ">>> Downloading Debian 12 template..."
     pveam update
-    pveam download $STORAGE debian-12-standard_12.0-1_amd64.tar.zst
+    pveam download local debian-12-standard_12.0-1_amd64.tar.zst
 fi
+
+IMG="local:vztmpl/debian-12-standard_12.0-1_amd64.tar.zst"
 
 # --- Create container ---
 pct create $CTID $IMG \
